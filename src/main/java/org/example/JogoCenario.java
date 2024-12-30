@@ -45,8 +45,18 @@ public class JogoCenario extends CenarioPadrao {
 
         if (idPeca == -1) {
             idPeca = rand.nextInt(Peca.PECAS.length);
+        } else {
+            idPeca = idPrxPeca;
         }
 
+        idPrxPeca = rand.nextInt(Peca.PECAS.length);
+
+        if (idPeca == idPrxPeca) {
+            idPrxPeca = rand.nextInt(Peca.PECAS.length);
+        }
+
+        peca = Peca.PECAS[idPeca];
+        corPeca = Peca.Cores[idPeca];
 
     }
 
