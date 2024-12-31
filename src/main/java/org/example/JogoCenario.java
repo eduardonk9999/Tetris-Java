@@ -60,6 +60,16 @@ public class JogoCenario extends CenarioPadrao {
 
     }
 
+    public void adcionaPecaNaGrade() {
+        for(int col = 0; col < peca.length; col++) {
+            for(int lin = 0; lin < peca[col].length; lin++) {
+                if(peca[lin][col] != 0) {
+                    grade[col + ppx][lin + ppy] = idPeca;
+                }
+            }
+        }
+    }
+
     @Override
     public void descarregar() {
 
