@@ -71,6 +71,13 @@ public class JogoCenario extends CenarioPadrao {
     }
 
     @Override
+    public void desenhar(Graphics2D g) {
+        for(int col = 0; col < grade.length; col++) {
+
+        }
+    }
+
+    @Override
     public void descarregar() {
 
     }
@@ -80,8 +87,5 @@ public class JogoCenario extends CenarioPadrao {
 
     }
 
-    @Override
-    public void desenhar(Graphics2D g) {
 
-    }
 }
