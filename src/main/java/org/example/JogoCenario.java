@@ -73,7 +73,22 @@ public class JogoCenario extends CenarioPadrao {
     @Override
     public void desenhar(Graphics2D g) {
         for(int col = 0; col < grade.length; col++) {
+            for(int lin = 0; lin < grade[0].length; lin++) {
+                int valor = grade[col][lin];
 
+                if(valor == ESPACO_VAZIO) {
+                    continue;
+                }
+                if (valor == LINHA_COMPLETA) {
+                    g.setColor(Color.RED);
+                } else {
+                    g.setColor(Peca.Cores[valor]);
+                }
+                int x = col * largBloco + ESPACAMENTO;
+                int y = lin * altBloco + ESPACAMENTO;
+
+                 g.fillRect(x, y, largBloco - ESPACAMENTO, altBloco - ESPACAMENTO);
+            }
         }
     }
 
