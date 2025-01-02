@@ -90,6 +90,29 @@ public class JogoCenario extends CenarioPadrao {
                  g.fillRect(x, y, largBloco - ESPACAMENTO, altBloco - ESPACAMENTO);
             }
         }
+
+        if (peca != null) {
+            g.setColor(corPeca);
+
+            for(int col = 0; col < peca.length; col++) {
+                for(int lin = 0; lin < peca.length; lin++){
+                    if(peca[lin][col] != 0) {
+                        int x = (col + ppx) * largBloco + ESPACAMENTO;
+                        int y = (lin + ppy) * altBloco + ESPACAMENTO;
+
+                        g.fillRect(x, y, largBloco - ESPACAMENTO, altBloco - ESPACAMENTO);
+                    } else if (depurar) {
+                        g.setColor(Color.PINK);
+                        int x = (col + ppx) * largBloco + ESPACAMENTO;
+                        int y = (lin + ppy) * altBloco + ESPACAMENTO;
+
+                        g.setColor(corPeca);
+                    }
+                }
+            }
+        }
+
+        // Parei aqui
     }
 
     @Override
