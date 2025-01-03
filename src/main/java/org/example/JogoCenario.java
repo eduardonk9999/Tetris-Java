@@ -112,7 +112,24 @@ public class JogoCenario extends CenarioPadrao {
             }
         }
 
-        // Parei aqui
+
+        int miniatura = largBloco  / 4;
+        int[][] prxPeca = Peca.PECAS[idPrxPeca];
+        g.setColor(Peca.Cores[idPrxPeca]);
+
+        for (int col = 0; col < prxPeca.length; col++) {
+            for (int lin = 0; lin < prxPeca[col].length; lin++) {
+                if (prxPeca[lin][col] == 0) {
+                    continue;
+                }
+                int x = col * miniatura + ESPACAMENTO;
+                int y = lin * miniatura + ESPACAMENTO;
+
+                g.fillRect(x, y, miniatura - ESPACAMENTO, miniatura - ESPACAMENTO);
+            }
+        }
+        // Ṕarei na PAG 110
+
     }
 
     @Override
