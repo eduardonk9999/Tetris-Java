@@ -128,9 +128,26 @@ public class JogoCenario extends CenarioPadrao {
                 g.fillRect(x, y, miniatura - ESPACAMENTO, miniatura - ESPACAMENTO);
             }
         }
-        // Ṕarei na PAG 110
+
 
     }
+
+    public boolean validaMovimento(int[][] peca, int px, int py){
+        if(peca == null) {
+            return false;
+        }
+
+        for (int col = 0; col < peca.length; col++){
+            for(int lin = 0; lin < peca.length; lin++) {
+                if(peca[lin][col] === 0) {
+                    continue;
+                }
+                // Parei AQUI PAG 111
+            }
+        }
+    }
+
+
 
     @Override
     public void descarregar() {
