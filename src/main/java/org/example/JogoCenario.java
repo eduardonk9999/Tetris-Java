@@ -138,13 +138,32 @@ public class JogoCenario extends CenarioPadrao {
         }
 
         for (int col = 0; col < peca.length; col++){
-            for(int lin = 0; lin < peca.length; lin++) {
-                if(peca[lin][col] === 0) {
+            for (int lin = 0; lin < peca.length; lin++) {
+                if (peca[lin][col] == 0) {
                     continue;
                 }
-                // Parei AQUI PAG 111
+                int prxPx = col + px;
+                int prxPy = lin + px;
+
+                if (prxPx < 0 || prxPx >= grade.length) {
+                    return false;
+                }
+                if (prxPy >= grade[0].length) {
+                    return false;
+                }
+                if (prxPy < 0) {
+                    continue;
+                }
+
+                // Colidiu com uma peça na grade
+                if (grade[prxPx][prxPy] > ESPACO_VAZIO) {
+                    return false;
+                }
+
             }
         }
+
+        return true;
     }
 
 
